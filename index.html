@@ -11,7 +11,7 @@
       var counter=0;
       $(document).ready(function () {
         async function play(wnd) {
-          console.log("may");
+          console.log("work");
           let response = await fetch(
             "https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/anticsrf"
           );
@@ -22,7 +22,7 @@
                  {method: "GET", 
                   headers: {"X-XSRF-TOKEN": data.xsrftoken
                             ,"Content-Type": "text/plain" 
-                            ,"Origin": "*"
+                            ,"Host": "eiiv-dev1.fa.us6.oraclecloud.com"
                             //,'Access-Control-Allow-Origin':'*'
                             //,'Access-Control-Allow-Methods': 'GET, OPTIONS'
                             //,'Access-Control-Request-Headers': 'X-XSRF-TOKEN'
