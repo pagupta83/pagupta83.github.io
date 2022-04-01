@@ -11,15 +11,16 @@
       var counter=0;
       $(document).ready(function () {
         async function play(wnd) {
-          console.log("friday");
+          console.log("fru");
           let response = await fetch(
             "https://eluq-test.fa.us2.oraclecloud.com/fscmRestApi/anticsrf"
           );
           console.log(response.status);
           let data = await response.json();
           console.log("csrf: " + data.xsrftoken);
+          document.cookie="XSRF-TOKEN="+data.xsrftoken;
           let tokenResponse = await fetch("https://eluq-test.fa.us2.oraclecloud.com/fscmRestApi/tokenrelay",
-                 {method: "GET", 
+                 {method: "GET", credentials: "include",
                   headers: {"X-XSRF-TOKEN": data.xsrftoken
                             ,"Content-Type": "text/plain" 
                             //,"Host": "eiiv-dev1.fa.us6.oraclecloud.com"
