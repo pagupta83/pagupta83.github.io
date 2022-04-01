@@ -25,7 +25,7 @@
                            }
                  });
           let tokenData = await tokenResponse.json();
-          console.log("token: "+ tokenData.accessToken);
+          console.log("accessToken: "+ tokenData.accessToken);
           counter=counter+1;
           if (counter===3){
             loginWindow.close();
