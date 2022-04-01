@@ -32,13 +32,11 @@
           counter=counter+1;
           if (counter===2){
             console.log("closing window");
+            window.addEventListener("focus",play);
             loginWindow.close();
           }                
         }
-        window.addEventListener("focus", function(){
-          play();
-           }
-          );
+        window.addEventListener("focus",play);
         $("button").click(function () {
           loginWindow=window.open(
               "https://eiiv-dev1.fa.us6.oraclecloud.com/fscmUI/faces/FuseWelcome",
