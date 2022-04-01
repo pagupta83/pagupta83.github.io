@@ -11,7 +11,7 @@
       var counter=0;
       $(document).ready(function () {
         async function play(wnd) {
-          console.log("hie");
+          console.log("hiee");
           let response = await fetch(
             "https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/anticsrf"
           );
@@ -27,7 +27,7 @@
           let tokenData = await tokenResponse.json();
           console.log("token status "+tokenResponse.status);
           console.log("tokenData "+tokenData);
-          console.log("accessToken: "+ json.stringify(tokenData));
+          console.log("accessToken: "+ JSON.stringify(tokenData));
           counter=counter+1;
           if (counter===3){
             loginWindow.close();
