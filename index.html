@@ -24,10 +24,7 @@
                   headers: {"X-XSRF-TOKEN": data.xsrftoken
                             ,"Content-Type": "text/plain" 
                             ,"Cookie": "XSRF-TOKEN="+data.xsrftoken
-                            //,"Host": "eiiv-dev1.fa.us6.oraclecloud.com"
-                            //,'Access-Control-Allow-Origin':'*'
-                            //,'Access-Control-Allow-Methods': 'GET, OPTIONS'
-                            //,'Access-Control-Request-Headers': 'X-XSRF-TOKEN'
+                            ,"Cache-Control": "no-cache, no-store, must-revalidate"
                            }
                  });
           let tokenData = await tokenResponse.json();
