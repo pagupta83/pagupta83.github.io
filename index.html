@@ -11,18 +11,18 @@
       var counter=0;
       $(document).ready(function () {
         async function play(wnd) {
-          console.log("hi");
+          console.log("pls");
           let response = await fetch(
             "https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/anticsrf"
           );
           console.log(response.status);
           let data = await response.json();
           console.log("csrf: " + data.xsrftoken);
-          let tokenResponse = await fetch(
-            "https://cors-anywhere.herokuapp.com/https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/tokenrelay",
+          let tokenResponse = await fetch("https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/tokenrelay",
                  {method: "GET", 
                   headers: {"X-XSRF-TOKEN": data.xsrftoken
                             ,"Content-Type": "text/plain" 
+                            ,"Origin": "https://pagupta83.github.io/"
                             //,'Access-Control-Allow-Origin':'*'
                             //,'Access-Control-Allow-Methods': 'GET, OPTIONS'
                             //,'Access-Control-Request-Headers': 'X-XSRF-TOKEN'
