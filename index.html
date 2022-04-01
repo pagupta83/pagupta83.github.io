@@ -7,7 +7,7 @@
     <title>HTML Dialog Element</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-      window.loginWindow;
+      var loginWindow;
       var counter=0;
       $(document).ready(function () {
         async function play(wnd) {
@@ -32,15 +32,11 @@
            }
           );
         $("button").click(function () {
-          window
+          loginWindow=window
             .open(
               'https://eiiv-dev1.fa.us6.oraclecloud.com/fscmUI/faces/FuseWelcome',
               'ModalPopUp',
-              'location=no,height=570,width=520,scrollbars=no,status=no',
-              (win) =>{
-                console.log("wind : "+win);
-              }
-            )
+              'location=no,height=570,width=520,scrollbars=no,status=no')
             .focus();
             console.log("window: " + typeof loginWindow);
         });
