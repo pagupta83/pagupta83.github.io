@@ -24,8 +24,8 @@
                             'Access-Control-Allow-Origin':'https://pagupta83.github.io'
                            }
                  });
-          //let tokenData = await tokenResponse.json();
-          //console.log("token: "+ tokenData.accessToken);
+          let tokenData = await tokenResponse.json();
+          console.log("token: "+ tokenData.accessToken);
           counter=counter+1;
           if (counter===3){
             loginWindow.close();
@@ -36,12 +36,10 @@
            }
           );
         $("button").click(function () {
-          loginWindow=window
-            .open(
-              'https://eiiv-dev1.fa.us6.oraclecloud.com/fscmUI/faces/FuseWelcome',
-              'ModalPopUp',
-              'location=no,height=570,width=520,scrollbars=no,status=no')
-            .focus();
+          loginWindow=window.open(
+              "https://eiiv-dev1.fa.us6.oraclecloud.com/fscmUI/faces/FuseWelcome",
+              "ModalPopUp","location=no");
+            loginWindow.focus();
             console.log("window: " + typeof loginWindow);
         });
       });
