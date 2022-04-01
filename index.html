@@ -19,7 +19,7 @@
           let data = await response.json();
           console.log("csrf: " + data.xsrftoken);
           let tokenResponse = await fetch("https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/tokenrelay?format=json",
-                 {"X-XSRF-TOKEN": data.xsrftoken,"mode": 'no-cors'});
+                 {"X-XSRF-TOKEN": data.xsrftoken});
           //let tokenData = await tokenResponse.json();
           //console.log("token: "+ tokenData.accessToken);
           counter=counter+1;
