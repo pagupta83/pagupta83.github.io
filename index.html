@@ -19,7 +19,11 @@
           let data = await response.json();
           console.log("csrf: " + data.xsrftoken);
           let tokenResponse = await fetch("https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/tokenrelay?format=json",
-                 {"X-XSRF-TOKEN": data.xsrftoken,'Access-Control-Allow-Origin':'https://pagupta83.github.io'});
+                 {method: "GET", 
+                  headers: {'X-XSRF-TOKEN': data.xsrftoken,
+                            'Access-Control-Allow-Origin':'https://pagupta83.github.io'
+                           }
+                 });
           //let tokenData = await tokenResponse.json();
           //console.log("token: "+ tokenData.accessToken);
           counter=counter+1;
