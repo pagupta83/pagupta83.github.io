@@ -11,17 +11,18 @@
       var counter=0;
       $(document).ready(function () {
         async function play(wnd) {
-          console.log("hlo");
+          console.log("hi");
           let response = await fetch(
             "https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/anticsrf"
           );
           console.log(response.status);
           let data = await response.json();
           console.log("csrf: " + data.xsrftoken);
-          let tokenResponse = await fetch("https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/tokenrelay?format=json",
+          let tokenResponse = await fetch("https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/tokenrelay",
                  {method: "GET", 
                   headers: {'X-XSRF-TOKEN': data.xsrftoken
-                            ,'Access-Control-Allow-Origin':'*'
+                            ,'Content-Type': 'text/plain'
+                            //,'Access-Control-Allow-Origin':'*'
                             //,'Access-Control-Allow-Methods': 'GET, OPTIONS'
                             //,'Access-Control-Request-Headers': 'X-XSRF-TOKEN'
                            }
