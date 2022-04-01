@@ -11,14 +11,15 @@
       var counter=0;
       $(document).ready(function () {
         async function play(wnd) {
-          console.log("bye");
+          console.log("hi");
           let response = await fetch(
             "https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/anticsrf"
           );
           console.log(response.status);
           let data = await response.json();
           console.log("csrf: " + data.xsrftoken);
-          let tokenResponse = await fetch("https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/tokenrelay",
+          let tokenResponse = await fetch(
+            "https://cors-anywhere.herokuapp.com/https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/tokenrelay",
                  {method: "GET", 
                   headers: {"X-XSRF-TOKEN": data.xsrftoken
                             ,"Content-Type": "text/plain" 
