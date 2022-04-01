@@ -26,10 +26,12 @@
                  });
           let tokenData = await tokenResponse.json();
           console.log("token status "+tokenResponse.status);
-          console.log("tokenData "+tokenData);
-          console.log("accessToken: "+ JSON.stringify(tokenData));
+          console.log("access_token "+tokenData.access_token);
+          console.log("user "+tokenData.principal);
+          //console.log("accessToken: "+ JSON.stringify(tokenData));
           counter=counter+1;
-          if (counter===3){
+          if (counter===2){
+            console.log("closing window");
             loginWindow.close();
           }                
         }
