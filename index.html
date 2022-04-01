@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>HTML Dialog Element</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  function play() {
+  document.cookie="XSRF-TOKEN=5Rez/mhe5SoqNl7DEy5V1BOrPts=;path=/;";
+    console.log('hi');
+  };
+  document.cookie="XSRF-TOKEN=5Rez/mhe5SoqNl7DEy5V1BOrPts=";
+  window.addEventListener('focus', play);
+  $("button").click(function(){
+    window.open("http://localhost:3000/login","_blank","popup=yes");
+  });
+});
+</script>
+  </head>
+
+  <body>
+
+    <button id="openModalDialog">Open Modal Dialog</button>
+  </body>
+  http://app.js
+</html>
