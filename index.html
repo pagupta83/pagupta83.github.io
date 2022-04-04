@@ -17,12 +17,10 @@
           console.log("registered the focus event");
         } 
         async function play(wnd) {
-          console.log("entering into play1");
+          console.log("entering into play");
           if(!anticsrfToken){  
           let response = await fetch(
-            "https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/anticsrf",{
-            method: "GET"
-            }
+            "https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/anticsrf"
           );
           console.log(response.status);
           let data = await response.json();
@@ -33,11 +31,8 @@
           
           if(anticsrfToken){
           let tokenResponse = await fetch("https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/tokenrelay",
-                 {method: "GET",
-                  /*mode: 'cors',*/
-                  credentials: 'include',
+                 {
                   headers: {"X-XSRF-TOKEN": anticsrfToken
-                            ,"Content-Type": "text/plain"
                             ,"Cache-Control": "no-cache, no-store, must-revalidate"
                            }
                  });
