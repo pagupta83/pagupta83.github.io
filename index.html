@@ -14,11 +14,11 @@
       $(document).ready(function () {
         if(!loginWindow){
           window.addEventListener("focus",play);
-          console.log("registered the focus event");
+          console.log("registered the focus event1");
         } 
         async function play(wnd) {
           console.log("entering into play");
-          if(!xsrftoken){  
+          if(!anticsrfToken){  
           let response = await fetch(
             "https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/anticsrf"
           );
@@ -29,7 +29,7 @@
           document.cookie="XSRF-TOKEN="+data.xsrftoken;
           }
           
-          if(xsrftoken){
+          if(anticsrfToken){
           let tokenResponse = await fetch("https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/tokenrelay",
                  {method: "GET",
                   /*mode: 'cors',*/
