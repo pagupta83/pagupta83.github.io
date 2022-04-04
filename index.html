@@ -12,7 +12,7 @@
       var anticsrfToken;
       var accessToken;
       $(document).ready(function () {
-        if(loginWindow){
+        if(!loginWindow){
           window.addEventListener("focus",play);
           console.log("registered the focus event");
         } 
