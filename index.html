@@ -14,7 +14,7 @@
       $(document).ready(function () {
         if(!loginWindow){
           window.addEventListener("focus",play);
-          console.log("registered the focus event2");
+          console.log("registered the focus event3");
         } 
         async function play(wnd) {
           console.log("entering into play");
@@ -31,7 +31,7 @@
           
           if(anticsrfToken){
           let tokenResponse = await fetch("https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/tokenrelay",
-                 {redirect: "follow",
+                 {redirect: "manual",
                   headers: {"X-XSRF-TOKEN": anticsrfToken
                             ,"Cache-Control": "no-cache, no-store, must-revalidate"
                            }
