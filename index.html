@@ -17,7 +17,7 @@
           console.log("registered the focus event");
         } 
         async function play(wnd) {
-          console.log("entering into play");
+          console.log("entering into play1");
           if(!anticsrfToken){  
           let response = await fetch(
             "https://eiiv-dev1.fa.us6.oraclecloud.com/fscmRestApi/anticsrf",{
@@ -27,7 +27,7 @@
           console.log(response.status);
           let data = await response.json();
           anticsrfToken=data.xsrftoken;
-          document.cookie=response.Set-Cookie;  
+          document.cookie=response.['Set-Cookie'];  
           console.log("csrf: " + data.xsrftoken);
           }
           
